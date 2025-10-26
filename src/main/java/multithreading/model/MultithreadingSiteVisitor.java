@@ -17,7 +17,7 @@ public class MultithreadingSiteVisitor {
     public void visitMultithread(int numOfThreads){
         latch = new CountDownLatch(numOfThreads);
         start = System.nanoTime();
-        for (int i = 0; i <= numOfThreads; i++) {
+        for (int i = 0; i <numOfThreads; i++) {
             new Thread(() -> {
                 try {
                     counter.incrementVisitCount();
@@ -35,15 +35,13 @@ public class MultithreadingSiteVisitor {
             end = System.nanoTime();
         } catch (InterruptedException ex) {
             Thread.currentThread().interrupt();
-            ex.getMessage();
+            System.out.println(ex.getMessage());
         }
 
     }
 
-    public double getTotalTimeOfHanding() {
+    public double getTotalTimeOfHandling() {
         double endPoint = (end != 0) ? end : System.nanoTime();
-        double duration = (endPoint - start) / 1_000_000_000;
-        System.out.println(duration);
-        return duration;
+        return (endPoint - start) / 1_000_000_000;
     }
 }

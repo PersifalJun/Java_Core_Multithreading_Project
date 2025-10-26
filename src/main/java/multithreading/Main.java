@@ -17,7 +17,7 @@ public class Main {
         MultithreadingSiteVisitor visitor1 = new MultithreadingSiteVisitor(unsynchronizedCounter);
         visitor1.visitMultithread(NUM_OF_THREADS);
         visitor1.waitUntilAllVisited();
-        visitor1.getTotalTimeOfHanding();
+        visitor1.getTotalTimeOfHandling();
         unsynchronizedCounter.getVisitCount();
         System.out.println("-".repeat(50));
 
@@ -25,7 +25,7 @@ public class Main {
         MultithreadingSiteVisitor visitor2 = new MultithreadingSiteVisitor(volatileCounter);
         visitor2.visitMultithread(NUM_OF_THREADS);
         visitor2.waitUntilAllVisited();
-        visitor2.getTotalTimeOfHanding();
+        visitor2.getTotalTimeOfHandling();
         volatileCounter.getVisitCount();
         System.out.println("-".repeat(50));
 
@@ -33,7 +33,7 @@ public class Main {
         MultithreadingSiteVisitor visitor3 = new MultithreadingSiteVisitor(synchronizedBlockCounter);
         visitor3.visitMultithread(NUM_OF_THREADS);
         visitor3.waitUntilAllVisited();
-        visitor3.getTotalTimeOfHanding();
+        visitor3.getTotalTimeOfHandling();
         synchronizedBlockCounter.getVisitCount();
         System.out.println("-".repeat(50));
 
@@ -41,7 +41,7 @@ public class Main {
         MultithreadingSiteVisitor visitor4 = new MultithreadingSiteVisitor(atomicIntegerCounter);
         visitor4.visitMultithread(NUM_OF_THREADS);
         visitor4.waitUntilAllVisited();
-        visitor4.getTotalTimeOfHanding();
+        visitor4.getTotalTimeOfHandling();
         atomicIntegerCounter.getVisitCount();
         System.out.println("-".repeat(50));
 
@@ -49,7 +49,7 @@ public class Main {
         MultithreadingSiteVisitor visitor5 = new MultithreadingSiteVisitor(reentrantLockVisitCounter);
         visitor5.visitMultithread(NUM_OF_THREADS);
         visitor5.waitUntilAllVisited();
-        visitor5.getTotalTimeOfHanding();
+        visitor5.getTotalTimeOfHandling();
         reentrantLockVisitCounter.getVisitCount();
         System.out.println("-".repeat(50));
 

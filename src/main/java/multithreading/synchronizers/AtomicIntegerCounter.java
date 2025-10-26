@@ -10,17 +10,15 @@ public class AtomicIntegerCounter implements SiteVisitCounter {
     @Override
     public void incrementVisitCount() {
         try {
+            this.counter.incrementAndGet();
             Thread.sleep(100);
         } catch (InterruptedException ex) {
-            ex.getMessage();
+            System.out.println(ex.getMessage());
         }
-        this.counter.incrementAndGet();
     }
 
     @Override
     public int getVisitCount() {
-        ;
-        System.out.println(this.counter.get());
         return this.counter.get();
     }
 }

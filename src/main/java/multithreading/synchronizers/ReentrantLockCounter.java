@@ -12,18 +12,16 @@ public class ReentrantLockCounter implements SiteVisitCounter {
     public void incrementVisitCount() {
         lock.lock();
         try {
-            Thread.sleep(100);
             this.counter++;
+            Thread.sleep(100);
         } catch (InterruptedException ex) {
-            ex.getMessage();
+            System.out.println(ex.getMessage());
         } finally {
             lock.unlock();
         }
     }
-
     @Override
     public int getVisitCount() {
-        System.out.println(this.counter);
         return this.counter;
     }
 }

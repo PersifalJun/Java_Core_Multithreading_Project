@@ -9,16 +9,15 @@ public class VolatileCounter implements SiteVisitCounter {
     @Override
     public void incrementVisitCount() {
         try {
-            Thread.sleep(100);
             this.counter++;
+            Thread.sleep(100);
         } catch (InterruptedException ex) {
-            ex.getMessage();
+            System.out.println(ex.getMessage());
         }
     }
 
     @Override
     public int getVisitCount() {
-        System.out.println(this.counter);
         return this.counter;
     }
 }

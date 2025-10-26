@@ -1,4 +1,4 @@
-package multitgheading.util;
+package multithreading.counter;
 
 public interface SiteVisitCounter {
 
